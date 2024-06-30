@@ -180,10 +180,10 @@ class AwaitTestTogether(Gather):
         self.__unexpected = 0
 
         self.display_config = default_display_config
-        if self.display_config is None: self.display_init()
+        if self.display_config is None: self.init_display()
         self.add_filter(_Box, Box_filter)
 
-    def display_init(self):
+    def init_display(self):
         self.display_config = DisplayConfig(
             _id=self.recognize_id
         )
