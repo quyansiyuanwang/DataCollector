@@ -15,14 +15,6 @@ class Config:
         self._id = _id
         self.attr_constants = attr_constants  # 配置默认值表
 
-        # if config is not None:
-        #     (cfg := {
-        #         name: value for name, value in attr_constants.items()
-        #     }).update(config)
-        #     for idea, value in cfg.items():
-        #         setattr(self, idea, value)
-        # else:
-        #
         self.update(self.attr_constants)
 
     def update(self, dictionary):
