@@ -1,0 +1,21 @@
+---------------------- [1] Tests here-----------------------
+Test1: 
+	Function: add 
+	Doc:	
+        add two numbers
+        :param a: a number
+        :type a: digit
+        :param b: another number
+        :type b: digit
+        :return: a + b
+        :rtype: digit
+         
+	Args:	(1, 2) 
+	Kwargs:	 {} 
+	result:	 3
+	expectation: Undefined<None>
+
+
+-----------------------ResultCounter------------------------
+	 total: 1; successes: 1; unexpected: 0; failures: 0
+------------------------------------------------------------
