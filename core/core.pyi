@@ -7,13 +7,13 @@ from typing import (
     Union,
     Protocol,
     Optional,
-    Final
+    Final, runtime_checkable
 )
 
-from .SupportLibs import Gather
 from .Configs import (DisplayConfig, RunConfig)
+from .SupportLibs import Gather
 
-
+@runtime_checkable
 class _Box(Protocol):
     _id: int
 
@@ -109,7 +109,7 @@ class _RunResult:
 
 TestListType = List[TestBase]
 
-TestTogetherDecoratorType = Callable[
+AwaitTestTogetherDecoratorType = Callable[
     [
         Tuple[ArgsType],
         Dict[str, KwargsType]
@@ -134,7 +134,7 @@ class AwaitTestTogether(Gather):
     ) -> None:
         super().__init__(...)
 
-    def display_init(self) -> None: ...
+    def init_display(self) -> None: ...
 
     def clear(self) -> None: ...
 
@@ -151,18 +151,12 @@ class AwaitTestTogether(Gather):
         uni_config: DisplayConfig
         cfg_v: Optional[bool]
 
-        def inner(function_: FunctionType) -> TestTogetherDecoratorType:
-            test: Test
+        def inner(function_: FunctionType) -> AwaitTestTogetherDecoratorType:
+            def decorator(*args: ArgsType, **kwargs: KwargsType) -> Test: ...
 
-            def decorator(*args: ArgsType, **kwargs: KwargsType) -> Test:
-                new_test: Test
+    def runall(self, ignore_unexpected: bool = False, ignore_error: bool = False) -> 'Test': ...
 
-    def runall(self, ignore_unexpected: bool = False, ignore_error: bool = False) -> 'Test':
-        self
-        result: Any
-        test: Test
-
-    def __getitem__(self, items: Union[Any, Tuple[Any, ...]]) -> Union[Gather, 'TestTogether']: ...
+    def __getitem__(self, items: Union[Any, Tuple[Any, ...]]) -> Union[Gather, 'AwaitTestTogether']: ...
 
     def __len__(self) -> str: ...
 
@@ -171,4 +165,5 @@ class AwaitTestTogether(Gather):
 
 def remove_excessive_indents(doc_string: str, indent_length: int = 4) -> str: ...
 
-def Box_filter(one: '_Box', another: '_Box')-> bool: ...
+
+def Box_filter(one: '_Box', another: '_Box') -> bool: ...

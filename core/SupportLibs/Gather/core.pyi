@@ -8,12 +8,13 @@ from typing import (
     Type,
     Callable,
     Optional,
-    TypeVar)
+    TypeVar, runtime_checkable
+)
 
 
 class _RunResult: ...
 
-
+@runtime_checkable
 class _Box(Protocol):
     _id: int
 
@@ -139,15 +140,10 @@ class Gather:
         idx: int
         target_ids: Tuple[int, None, ...]
 
-        def getter(target: Test) -> TupleType:
-            res: Tuple[Any]
-            ...
-
-        ...
+        def getter(target: Test) -> TupleType: ...
 
     def __len__(self) -> int: ...
 
-    def __str__(self):
-        prop: str
+    def __str__(self): ...
 
     def __eq__(self, other: "Gather") -> bool: ...
