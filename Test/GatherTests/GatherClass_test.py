@@ -1,5 +1,5 @@
 import unittest
-from typing import Protocol
+from typing import Protocol, runtime_checkable
 
 from core import RunConfig
 from core.SupportLibs.Gather import Gather
@@ -8,6 +8,7 @@ from utils.ProjectPath import GatherRunResultsPath
 
 class GatherTests(unittest.TestCase):
     def test_normalFunctionOfFilter(self):
+        @runtime_checkable
         class _Box(Protocol):
             _id: int
 

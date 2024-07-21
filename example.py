@@ -42,7 +42,7 @@ hello('Alex') >> 'Alex hello'
 raise_err()
 
 
-testit.runall(ignore_unexpected=True, ignore_error=True)  # 忽略期望值
+testit.runall(ignore_unexpected=True, ignore_error=True)
 
 print(testit)
 # print(testit[sub][0].run(ignore_unexpected=True))

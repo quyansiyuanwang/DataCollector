@@ -5,11 +5,11 @@ RootPath = '\\'.join(Path.cwd().__str__().split('\\')[:-1])
 
 ConfigRunResultsPath = Path("Test\\ConfigTests\\ConfigRunResults")
 GatherRunResultsPath = Path("Test\\GatherTests\\GatherRunResults")
-TestTogetherRunResultsPath = Path("Test\\TestTogetherTests\\TestTogetherRunResults")
+TestTogetherRunResultsPath = Path("Test\\AwaitTestTogetherTests\\TestTogetherRunResults")
 
 ConfigWorkPath = Path("Test\\ConfigTests")
 GatherWorkPath = Path("Test\\GatherTests")
-TestTogetherWorkPath = Path("Test\\TestTogetherTests")
+TestTogetherWorkPath = Path("Test\\AwaitTestTogetherTests")
 
 __all__ = [
     "ConfigRunResultsPath",

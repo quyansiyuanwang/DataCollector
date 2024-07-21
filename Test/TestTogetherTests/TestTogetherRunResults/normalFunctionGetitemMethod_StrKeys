@@ -1,8 +1,0 @@
-Gather:
-	((1, 9), -8)
-	((3, 1), 4)
-	((4, 6), -2)
-	((114000, 514), 114514)
-	((1, 2), 3)
-	(('Alex',), 'Alex hello')
-	((), "ZeroDivisionError('division by zero')")

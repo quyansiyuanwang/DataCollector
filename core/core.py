@@ -1,5 +1,5 @@
 from copy import deepcopy
-from typing import Protocol
+from typing import Protocol, runtime_checkable
 
 from .Configs import DisplayConfig, RunConfig
 from .SupportLibs import Gather
@@ -8,6 +8,7 @@ from .SupportLibs import Gather
 class RunResultError(Exception): pass
 
 
+@runtime_checkable
 class _Box(Protocol):
     _id: int
 
