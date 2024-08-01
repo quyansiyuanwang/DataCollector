@@ -8,7 +8,8 @@ from typing import (
     Type,
     Callable,
     Optional,
-    TypeVar, runtime_checkable
+    TypeVar,
+    runtime_checkable
 )
 
 
@@ -134,11 +135,7 @@ class Gather:
             self,
             items: ItemsType
     ) -> Union[Gather, Any]:
-        first_item: Any
-        first_item_type: Type
-        isAllSameType: bool
-        idx: int
-        target_ids: Tuple[int, None, ...]
+        ...
 
         def getter(target: Test) -> TupleType: ...
 

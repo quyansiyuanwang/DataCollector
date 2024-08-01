@@ -22,7 +22,7 @@
    - `clear`方法清空obj中的协程测试函数
    - `init_display`方法初始化obj的显示方式
 
-3. Config
+3. `Config`
 主要功能: 实例化配置对象
    - `__init__`方法初始化一个配置对象
    - `__setitem__`方法设置配置项

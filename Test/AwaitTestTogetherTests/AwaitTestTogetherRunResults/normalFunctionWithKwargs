@@ -1,0 +1,27 @@
+---------------------- [3] Tests here-----------------------
+Test1: 
+	Function: add 
+	Args:	(1, 2) 
+	result:	 3
+	expectation: Undefined<None>
+
+
+Test2: 
+	Function: sub 
+	Doc:	None 
+	Args:	(1, 2) 
+	Kwargs:	 {} 
+	result:	 -1
+	expectation: Undefined<None>
+
+
+Test3: 
+	Function: add 
+	Args:	(3, 1) 
+	result:	 4
+	expectation: Undefined<None>
+
+
+-----------------------ResultCounter------------------------
+	 total: 3; successes: 3; unexpected: 0; failures: 0
+------------------------------------------------------------
