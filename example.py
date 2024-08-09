@@ -41,7 +41,6 @@ add(1, 2) >> 4  # 1 + 2 = 4
 hello('Alex') >> 'Alex hello'
 raise_err()
 
-
 testit.runall(ignore_unexpected=True, ignore_error=True)
 
 print(testit)
